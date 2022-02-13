@@ -1,6 +1,7 @@
-import type { IStorage } from "./types";
+import { setup as setupEmojis } from './scripts/emojis'
 
-chrome.storage.sync.get({ count: 0 } as IStorage, ({ count }: IStorage) => {
-    console.log(count);
-});
- 
+const initScript = () => {
+    setupEmojis();
+}
+
+initScript();

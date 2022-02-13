@@ -7,6 +7,7 @@ import css from "rollup-plugin-css-only";
 import svelte from "rollup-plugin-svelte";
 import { terser } from "rollup-plugin-terser";
 import sveltePreprocess from "svelte-preprocess";
+import copy from "rollup-plugin-copy-assets";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -48,6 +49,12 @@ function createConfig(filename, useSvelte = false) {
             commonjs(),
             typescript(),
 
+            copy({
+                assets: [
+                  "src/assets",
+                ],
+              }),
+
             // If we're building for production (npm run build
             // instead of npm run dev), minify
             production && terser(),
@@ -58,6 +65,5 @@ function createConfig(filename, useSvelte = false) {
 export default [
     createConfig("options", true),
     createConfig("popup", true),
-    createConfig("background"),
     createConfig("content_script"),
 ];

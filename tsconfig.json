@@ -8,5 +8,6 @@
         "isolatedModules": false,
         "typeRoots": ["node_modules/@types"],
         "types": ["svelte", "chrome"],
-    }
+        "lib": ["dom", "es2021"],
+    },
 }

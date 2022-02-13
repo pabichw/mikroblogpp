@@ -21,5 +21,9 @@
             "128": "assets/appIcons/icon128.png"
         }
     },
-    "permissions": ["storage"]
+    "permissions": ["storage"],
+    "web_accessible_resources": [{
+        "resources": [ "build/assets/*" ],
+        "matches": [ "<all_urls>" ]
+      }] 
 }
