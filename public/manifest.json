@@ -6,15 +6,12 @@
     "content_scripts": [
         {
             "all_frames": true,
+            "css": ["build/content_script.css", "build/style.css"],
             "js": ["build/content_script.js"],
             "matches": ["https://www.wykop.pl/*"],
             "run_at": "document_end"
         }
     ],
-    "options_ui": {
-        "page": "options.html",
-        "open_in_tab": false
-    },
     "action": {
         "default_popup": "popup.html",
         "default_icon": {

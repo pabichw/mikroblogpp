@@ -8,6 +8,7 @@ import svelte from "rollup-plugin-svelte";
 import { terser } from "rollup-plugin-terser";
 import sveltePreprocess from "svelte-preprocess";
 import copy from "rollup-plugin-copy-assets";
+import scss from 'rollup-plugin-scss'
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -35,6 +36,11 @@ function createConfig(filename, useSvelte = false) {
             // we'll extract any component CSS out into
             // a separate file - better for performance
             css({ output: `${filename}.css` }),
+            scss({
+                include: ["/**/*.css", "/**/*.scss", "/**/*.sass"],
+                output: "public/build/style.css",
+                failOnError: true,
+            }),
 
             // If you have external dependencies installed from
             // npm, you'll most likely need these plugins. In
@@ -63,7 +69,6 @@ function createConfig(filename, useSvelte = false) {
 }
 
 export default [
-    createConfig("options", true),
     createConfig("popup", true),
-    createConfig("content_script"),
+    createConfig("content_script", true),
 ];

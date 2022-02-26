@@ -1,5 +1,5 @@
-export const insertAtCursor = (myField, myValue) => {
-    if (myField.selectionStart || myField.selectionStart == '0') {
+export const insertAtCursor = (myField, myValue): void => {
+    if (myField.selectionStart) {
         var startPos = myField.selectionStart;
         var endPos = myField.selectionEnd;
         myField.value = myField.value.substring(0, startPos)
@@ -10,4 +10,4 @@ export const insertAtCursor = (myField, myValue) => {
     }
     
     myField.focus();
-} 
+}

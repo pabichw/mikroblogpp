@@ -1,0 +1,18 @@
+/* Reset */
+a.profile {
+    position: relative;
+}
+
+.mfUploadHolder > .row.buttons {
+    overflow: visible;
+}
+
+
+/* Emojis */
+.mbpp { 
+    &-emoji { 
+        img {
+           height: 20px;
+        }
+    }
+}
