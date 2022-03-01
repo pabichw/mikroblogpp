@@ -8,11 +8,23 @@ a.profile {
 }
 
 
+#commentForm {
+    textarea {
+        position: relative;
+        z-index: 10;
+    }
+}
+
 /* Emojis */
 .mbpp { 
+    .rotate {
+        transform: rotate(180deg);
+    }
+
     ::-webkit-scrollbar {
         width: 7px;
     }
+
     ::-webkit-scrollbar-thumb {
         border-radius: 5px;
         background-color: rgb(87, 87, 87);
@@ -20,7 +32,7 @@ a.profile {
     
     ::-webkit-scrollbar-track {
         border-radius: 5px;
-        background-color: #777;
+        background-color: #3c3c3c;
     }
     
     &-emoji { 

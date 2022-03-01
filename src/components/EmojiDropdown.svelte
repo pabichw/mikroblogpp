@@ -3,6 +3,7 @@
     import Emoji from './Emoji.svelte';
 
     export let onChoosen: (IEmoji) => void
+    export let onBackdropClick: () => void
 
     $: filteredEmojis = EMOJIS;
     $: categories = [...new Set(Object.entries(filteredEmojis).map(([_, value]) => (value as IEmoji).categories ).flat())];
@@ -77,6 +78,15 @@
                 padding-bottom: 2px;
             }
         }
+        
+        &-dropdownBackdrop {
+            height: 100vh;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            z-index: 9;
+        }
     }
 </style>
 <section class="mbpp mbpp-emojisDropdown notVisible">
@@ -105,3 +115,5 @@
         {/each}
     </section>
 </section>
+
+<div class="mbpp-dropdownBackdrop" on:click={onBackdropClick} />
