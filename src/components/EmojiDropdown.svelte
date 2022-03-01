@@ -61,6 +61,10 @@
         }
 
         &-emojiList {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 5px;
+
             .mbpp-emoji {
                 margin-left: 2px;
                 margin-bottom: 2px;
@@ -75,7 +79,7 @@
         }
     }
 </style>
-<section class="mbpp-emojisDropdown notVisible">
+<section class="mbpp mbpp-emojisDropdown notVisible">
     <input 
         class="mbpp-emojiSearch"
         placeholder="Wyszukaj..."

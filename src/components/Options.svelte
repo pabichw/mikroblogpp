@@ -13,5 +13,6 @@
     <p>Mikroblog ++</p>
     <div>
         <span class="success">Naprawiamy Twoje tagi since 2022</span>
+        <span>Kontakt: <a href="https://wykop.pl/ludzie/flown">flown</a></span>
     </div>
 </div>

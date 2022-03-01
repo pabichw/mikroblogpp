@@ -10,6 +10,19 @@ a.profile {
 
 /* Emojis */
 .mbpp { 
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: rgb(87, 87, 87);
+    }
+    
+    ::-webkit-scrollbar-track {
+        border-radius: 5px;
+        background-color: #777;
+    }
+    
     &-emoji { 
         img {
            height: 20px;
