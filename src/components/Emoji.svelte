@@ -9,9 +9,9 @@
         e.preventDefault();
 
         if (!disableRecent) {
-            let recentlyUsedEmojis = JSON.parse(localStorage.getItem('MIKROBLOG_RECENTLY_USED_EMOJIS')) as IEmoji[];
-            recentlyUsedEmojis = recentlyUsedEmojis.filter(k => k.name !== emoji.name);
-            recentlyUsedEmojis.unshift(emoji);
+            let recentlyUsedEmojis = JSON.parse(localStorage.getItem('MIKROBLOG_RECENTLY_USED_EMOJIS')) as string[];
+            recentlyUsedEmojis = recentlyUsedEmojis.filter(k => k !== emoji.name);
+            recentlyUsedEmojis.unshift(emoji.name);
             recentlyUsedEmojis = recentlyUsedEmojis.slice(0,10);
             
             localStorage.setItem('MIKROBLOG_RECENTLY_USED_EMOJIS', JSON.stringify(recentlyUsedEmojis));

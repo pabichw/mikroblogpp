@@ -1,8 +1,11 @@
 {
     "name": "Mikroblog++",
     "description": "Rozszerz możliwości Wykop.pl",
-    "version": "1.0.5",
+    "version": "1.0.7",
     "manifest_version": 3,
+    "icons": { 
+        "128": "icons/icon128.png"
+    },
     "content_scripts": [
         {
             "all_frames": true,

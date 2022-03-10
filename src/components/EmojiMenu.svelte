@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Emoji from './Emoji.svelte';
 	import { insertAtCursor } from '../utils/dom';
-	import { EMOJI_PROMPT } from '../config';
+	import { EMOJIS, EMOJI_PROMPT } from '../config';
 	import type { IEmoji } from './../types';
 	import EmojiDropdown from './EmojiDropdown.svelte';	
 
-	$: recentlyUsedEmojis = JSON.parse(localStorage.getItem('MIKROBLOG_RECENTLY_USED_EMOJIS')) as IEmoji[];
+	$: recentlyUsedEmojis = JSON.parse(localStorage.getItem('MIKROBLOG_RECENTLY_USED_EMOJIS')) as string[];
 	$: menuVisible = false;
 
 	const injectEmoji = (emoji: IEmoji, formHandler: Element) => {
@@ -42,8 +42,8 @@
 </style>
 
 <div class="mbpp mbpp-emojiMenu">
-    {#each recentlyUsedEmojis as emoji }
-        <Emoji emoji={{ name: emoji.name, src: emoji.src }} onClick={handleOnClick} disableRecent />
+    {#each recentlyUsedEmojis as emojiKey }
+        <Emoji emoji={{ name: emojiKey, src: EMOJIS[emojiKey]?.asset, categories: EMOJIS[emojiKey]?.categories }} onClick={handleOnClick} disableRecent />
     {/each}
     <a class='button mbpp-dropdownBtn' on:click={handleDropdownToggle}>
 		<img class='{menuVisible ? 'rotate' : ''}' alt="dropdown-icon" src={chrome.runtime.getURL('build/assets/arrow-down.svg')} />
