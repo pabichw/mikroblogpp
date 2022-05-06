@@ -1,4 +1,6 @@
-public/build
+public
 node_modules
-package-lock.json
-release*.zip
+*-lock.json
+*.zip
+*.pem
+*.crx

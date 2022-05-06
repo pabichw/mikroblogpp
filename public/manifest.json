@@ -1,27 +1,22 @@
 {
     "name": "Mikroblog++",
     "description": "Rozszerz możliwości Wykop.pl",
-    "version": "1.0.9",
+    "version": "1.1",
     "manifest_version": 3,
     "icons": { 
         "128": "icons/icon128.png"
     },
     "content_scripts": [
         {
-            "all_frames": true,
+            "all_frames": true, 
             "css": ["build/content_script.css", "build/style.css"],
             "js": ["build/content_script.js"],
             "matches": ["https://www.wykop.pl/*"],
             "run_at": "document_end"
         }
     ],
-    "action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-            "128": "assets/appIcons/icon128.png"
-        }
-    },
-    "permissions": ["storage"],
+    "action": {},
+    "permissions": [],
     "web_accessible_resources": [{
         "resources": [ "build/assets/*" ],
         "matches": [ "<all_urls>" ]
