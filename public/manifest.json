@@ -16,7 +16,7 @@
         }
     ],
     "action": {},
-    "permissions": [],
+    "permissions": ["storage"],
     "web_accessible_resources": [{
         "resources": [ "build/assets/*" ],
         "matches": [ "<all_urls>" ]

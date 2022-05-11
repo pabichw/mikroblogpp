@@ -4,7 +4,7 @@ import { EMOJIS } from './config';
 import './style/__global.scss';
 
 const loadConfig = () => {
-    if (localStorage.getItem('MIKROBLOG_RECENTLY_USED_EMOJIS') === null) {
+    if (localStorage.getItem('MIKROBLOG_RECENTLY_USED_EMOJIS') === null) { // TODO: use chrome API?
         const temp = Object.keys(EMOJIS).slice(0, 10)
         localStorage.setItem('MIKROBLOG_RECENTLY_USED_EMOJIS', JSON.stringify(temp)); // WTF?
     }
