@@ -3,9 +3,10 @@
 	import { insertAtCursor } from '../utils/dom';
 	import { EMOJIS, EMOJI_PROMPT } from '../config';
 	import type { IEmoji } from './../types';
+	import { getConfig } from '../content_script'
 	import EmojiDropdown from './EmojiDropdown.svelte';	
 
-	$: recentlyUsedEmojis = JSON.parse(localStorage.getItem('MIKROBLOG_RECENTLY_USED_EMOJIS')) as string[];
+	$: recentlyUsedEmojis = getConfig().RECENTLY_USED_EMOJIS as string[];
 	$: menuVisible = false;
 
 	const injectEmoji = (emoji: IEmoji, formHandler: Element) => {

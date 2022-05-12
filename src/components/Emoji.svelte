@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { IEmoji } from "../types";
+    import { getConfig, setConfig } from '../content_script';
 
     export let emoji: IEmoji;
     export let disableRecent: Boolean | undefined;
@@ -9,12 +10,12 @@
         e.preventDefault();
 
         if (!disableRecent) {
-            let recentlyUsedEmojis = JSON.parse(localStorage.getItem('MIKROBLOG_RECENTLY_USED_EMOJIS')) as string[];
+            let recentlyUsedEmojis = getConfig()['RECENTLY_USED_EMOJIS'] as string[];
             recentlyUsedEmojis = recentlyUsedEmojis.filter(k => k !== emoji.name);
             recentlyUsedEmojis.unshift(emoji.name);
             recentlyUsedEmojis = recentlyUsedEmojis.slice(0,10);
-            
-            localStorage.setItem('MIKROBLOG_RECENTLY_USED_EMOJIS', JSON.stringify(recentlyUsedEmojis));
+
+            setConfig('RECENTLY_USED_EMOJIS', recentlyUsedEmojis);
         }
         onClick(emoji);
     }
