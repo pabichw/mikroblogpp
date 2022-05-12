@@ -26,3 +26,10 @@ $ npm run build
 3. Click the `LOAD UNPACKED` button and select the `/public` directory.
 
 ![Example](https://developer-chrome-com.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/iYdLKFsJ1KSVGLhbLRvS.png?auto=format&w=650)
+
+
+## TODOS
+- wersja firefox
+- typowanie
+- popup pokazmorde
+- popup (ten natywny) z kontakem do deva 
