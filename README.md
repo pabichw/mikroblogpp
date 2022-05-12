@@ -33,3 +33,4 @@ $ npm run build
 - typowanie
 - popup pokazmorde
 - popup (ten natywny) z kontakem do deva 
+- move localstorage -> chrome.storage
