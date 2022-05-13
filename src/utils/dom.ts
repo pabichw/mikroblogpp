@@ -11,3 +11,13 @@ export const insertAtCursor = (myField, myValue): void => {
     
     myField.focus();
 }
+
+export const spierdalacz = (elem: HTMLElement, checkBreak?: () => bool): void => {
+    elem.addEventListener('mouseenter', () => {
+        if (checkBreak()) {
+            return 
+        }
+        elem.style.left = `${Math.random() * 40 - 20}px`;
+        elem.style.top = `${Math.random() * 40 - 20}px`;
+    })
+}

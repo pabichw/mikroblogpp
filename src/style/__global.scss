@@ -34,7 +34,16 @@ a.profile {
         border-radius: 5px;
         background-color: #3c3c3c;
     }
-    
+
+    &-promo-checkbox {
+        position: absolute;
+        z-index: 10;
+    }
+
+    &-promo-label {
+        margin-left: 24px !important;
+    }
+
     &-emoji { 
         img {
            height: 20px;

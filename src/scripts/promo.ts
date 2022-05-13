@@ -1,5 +1,6 @@
 import { PROMO_CONTENT } from '../config';
 import { getConfig, setConfig } from '../content_script';
+import { spierdalacz } from '../utils/dom';
 
 const hidePromoTrash = (): void => 
     Array.from(document.querySelectorAll('#itemsStream li .text'))
@@ -13,6 +14,7 @@ const initPromo = async (): Promise<void> => {
     const row: HTMLDivElement = document.createElement('div');
     const input: HTMLInputElement = document.createElement('input');
     const label: HTMLLabelElement = document.createElement('label');
+    spierdalacz(input, () => !getConfig().ALLOW_PROMO);
 
     commentSubmitBtn.addEventListener('click', async (e: SubmitEvent): Promise<any> => {
         if (!getConfig().ALLOW_PROMO) {
@@ -25,16 +27,15 @@ const initPromo = async (): Promise<void> => {
 
     row.className= 'row';
 
-    input.id = 'mpp-promo-checkbox';
-    input.className = 'checkbox';
+    input.id = 'mbpp-promo-checkbox';
+    input.className = 'checkbox mbpp-promo-checkbox';
     input.type="checkbox";
     input.checked = getConfig().ALLOW_PROMO;
     input.onchange = (e) => {
         setConfig('ALLOW_PROMO', e.target.checked)
     }
 
-    label.className = 'inline';
-    label.htmlFor = 'mpp-promo-checkbox';
+    label.className = 'inline mbpp-promo-label';
     label.innerText = 'Pomóż promować Mikroblog++';
     
     row.appendChild(input);
